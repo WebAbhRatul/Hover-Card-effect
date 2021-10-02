@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#A1FFCE,#A1FFCE);
+}
+.box{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 15px;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    border-radius: 4px;
+    background: linear-gradient(#200122,#6f0000);
+
+
+}
+
+.card .cimg{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(#800080, #ffc0cb);
+    transition: bottom 1s ease-in-out;
+    z-index: 1;
+}
+.card:hover .cimg{
+    bottom: 80px;
+}
+.card .cimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.card .cdetails{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 60px;
+    text-align: center;
+    display: none;
+}
+.card:hover .cdetails{
+    display: block;
+    color: aliceblue;
+}
+
+.card .cdetails h2{
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+.card::before,
+.card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(#200122,#6f0000);
+    transition: transform 1s ease-in-out;
+    z-index: -1;
+}
+.card:hover:before{
+    transform: rotate(20deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+    }
+    .card:hover:after{
+    transform: rotate(10deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+    }
